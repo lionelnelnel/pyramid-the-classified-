@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PYRAMID — The Classified</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f5f7;
+      color: #252932;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 22px;
+      border-bottom: 1px solid #dedfe3;
+      background: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .edition {
+      font-size: 10px;
+      color: #777d87;
+      letter-spacing: 2px;
+      margin-top: 5px;
+    }
+
+    .status {
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: #65796a;
+    }
+
+    main {
+      max-width: 460px;
+      margin: 55px auto;
+      padding: 20px;
+    }
+
+    .label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #777d87;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(35px, 9vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: #858b96;
+    }
+
+    .intro {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #737984;
+      margin-bottom: 32px;
+    }
+
+    .panel {
+      background: #ffffff;
+      border: 1px solid #dfe1e6;
+      padding: 25px;
+      border-radius: 5px;
+    }
+
+    .panel h2 {
+      font-size: 15px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .sub {
+      font-size: 12px;
+      color: #858b96;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 1px;
+      margin-bottom: 9px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d9dce2;
+      background: #fafbfc;
+      margin-bottom: 20px;
+      font-size: 14px;
+      border-radius: 3px;
+      outline-color: #858b96;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      background: #292e37;
+      color: white;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    button:active {
+      background: #505661;
+    }
+
+    #message {
+      display: none;
+      margin-top: 18px;
+      font-size: 12px;
+      line-height: 1.7;
+      color: #505661;
+    }
+
+    .notice {
+      margin-top: 22px;
+      font-size: 10px;
+      color: #8b9099;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 10px;
+      color: #969ba4;
+      letter-spacing: 1px;
+    }
+
+    .pyramid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      margin: 30px auto;
+    }
+
+    .level {
+      height: 24px;
+      background: #dfe2e7;
+      border: 1px solid #cbd0d8;
+    }
+
+    .level:nth-child(1) { width: 18%; }
+    .level:nth-child(2) { width: 35%; }
+    .level:nth-child(3) { width: 52%; }
+    .level:nth-child(4) { width: 69%; }
+    .level:nth-child(5) { width: 86%; }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <div class="brand">PYRAMID.</div>
+      <div class="edition">THE CLASSIFIED</div>
+    </div>
+
+    <div class="status">● SYSTEM ONLINE</div>
+  </header>
+
+  <main>
+    <p class="label">SEHWA INTERNATIONAL HIGH SCHOOL</p>
+
+    <h1>EVERYONE<br>HAS A <span>RANK.</span></h1>
+
+    <p class="intro">
+      Twenty-five students. One classroom.
+      An anonymous voting system.
+      And secrets that should have stayed hidden.
+    </p>
+
+    <div class="pyramid" aria-label="Ilustrasi piramida">
+      <div class="level"></div>
+      <div class="level"></div>
+      <div class="level"></div>
+      <div class="level"></div>
+      <div class="level"></div>
+    </div>
+
+    <section class="panel">
+      <h2>STUDENT ACCESS</h2>
+
+      <p class="sub">
+        Welcome to Class XI-5.<br>
+        Enter the classified student portal.
+      </p>
+
+      <form id="loginForm">
+        <label for="studentId">STUDENT ID</label>
+
+        <input
+          id="studentId"
+          type="text"
+          placeholder="Enter your student ID"
+          required
+        >
+
+        <label for="password">ACCESS CODE</label>
+
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter your access code"
+          required
+        >
+
+        <button type="submit">ENTER THE PYRAMID ↗</button>
+      </form>
+
+      <p id="message" role="status"></p>
+    </section>
+
+    <p class="notice">
+      CLASSIFIED SYSTEM · XI-5<br>
+      UNAUTHORIZED ACCESS IS PROHIBITED
+    </p>
+  </main>
+
+  <footer>
+    PYRAMID: THE CLASSIFIED © 2026
+  </footer>
+
+  <script>
+    document.getElementById("loginForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const message = document.getElementById("message");
+
+        message.style.display = "block";
+        message.textContent =
+          "ACCESS PORTAL UNDER DEVELOPMENT. " +
+          "Student accounts will be activated soon.";
+
+      });
+  </script>
+
+</body>
+</html>
